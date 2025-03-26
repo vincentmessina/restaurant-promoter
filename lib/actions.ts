@@ -177,3 +177,30 @@ export async function checkInGuestlistEntry(id: string, arrivalTime: string): Pr
   revalidatePath("/tables")
 }
 
+// Profile actions
+export async function updateProfile(data: any): Promise<void> {
+  // In a real app, this would update in a database
+  console.log("Updating profile:", data)
+
+  // Simulate delay
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+
+  // Revalidate all paths that might display profile data
+  revalidatePath("/profile")
+  revalidatePath("/dashboard")
+  revalidatePath("/")
+}
+
+export async function updateProfileImage(imageData: any): Promise<void> {
+  // In a real app, this would upload image to storage and update database
+  console.log("Updating profile image:", imageData)
+
+  // Simulate delay
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+
+  // Revalidate all paths that might display profile data
+  revalidatePath("/profile")
+  revalidatePath("/dashboard")
+  revalidatePath("/")
+}
+

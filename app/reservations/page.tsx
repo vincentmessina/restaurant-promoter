@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Loader2 } from "lucide-react"
 import ReservationsHeader from "@/components/reservations/reservations-header"
-import ReservationsList from "@/components/reservations/reservations-list"
+import ReservationsTabs from "@/components/reservations/reservations-tabs"
 
 export default function ReservationsPage() {
   return (
@@ -15,7 +15,7 @@ export default function ReservationsPage() {
           </div>
         }
       >
-        <ReservationsList />
+        <ReservationsTabs />
       </Suspense>
     </div>
   )

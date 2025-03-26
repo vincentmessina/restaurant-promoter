@@ -1,4 +1,4 @@
-import type { BlockedDate, Guest, GuestlistEntry, Reservation, ReservationStats, Table } from "./types"
+import type { BlockedDate, Guest, GuestlistEntry, Profile, Reservation, ReservationStats, Table } from "./types"
 
 // Mock data for reservations
 const reservations: Reservation[] = [
@@ -12,6 +12,8 @@ const reservations: Reservation[] = [
     status: "confirmed",
     specialRequests: "Window seat preferred",
     isVip: true,
+    promoterId: "p1",
+    promoterName: "Mike Davis",
   },
   {
     id: "2",
@@ -22,6 +24,8 @@ const reservations: Reservation[] = [
     tableNumber: 3,
     status: "confirmed",
     isVip: false,
+    promoterId: "p1",
+    promoterName: "Mike Davis",
   },
   {
     id: "3",
@@ -33,6 +37,8 @@ const reservations: Reservation[] = [
     status: "pending",
     specialRequests: "Birthday celebration",
     isVip: false,
+    promoterId: "p2",
+    promoterName: "Sarah Jones",
   },
   {
     id: "4",
@@ -43,6 +49,8 @@ const reservations: Reservation[] = [
     tableNumber: 7,
     status: "confirmed",
     isVip: false,
+    promoterId: "p2",
+    promoterName: "Sarah Jones",
   },
   {
     id: "5",
@@ -54,6 +62,8 @@ const reservations: Reservation[] = [
     status: "canceled",
     specialRequests: "Allergic to nuts",
     isVip: true,
+    promoterId: "p3",
+    promoterName: "Chris Wilson",
   },
   {
     id: "6",
@@ -64,6 +74,8 @@ const reservations: Reservation[] = [
     tableNumber: 8,
     status: "confirmed",
     isVip: false,
+    promoterId: "p3",
+    promoterName: "Chris Wilson",
   },
   {
     id: "7",
@@ -75,6 +87,8 @@ const reservations: Reservation[] = [
     status: "confirmed",
     specialRequests: "Celebrating anniversary",
     isVip: true,
+    promoterId: "p1",
+    promoterName: "Mike Davis",
   },
   {
     id: "8",
@@ -85,6 +99,8 @@ const reservations: Reservation[] = [
     tableNumber: 4,
     status: "pending",
     isVip: false,
+    promoterId: "p2",
+    promoterName: "Sarah Jones",
   },
 ]
 
@@ -384,5 +400,40 @@ export async function getGuests(): Promise<Guest[]> {
 export async function getGuestlist(): Promise<GuestlistEntry[]> {
   await delay(500) // Simulate API delay
   return [...guestlist]
+}
+
+// Mock data for venue profile
+const profile: Profile = {
+  id: "venue-1",
+  venueName: "Skyline Lounge",
+  venueLocation: "Rooftop • Downtown",
+  venueDescription: "Experience nightlife from a new perspective at our exclusive rooftop venue featuring world-class DJs and premium bottle service.",
+  musicGenres: ["EDM", "House"],
+  operatingHours: {
+    openTime: "10:00 PM",
+    closeTime: "4:00 AM"
+  },
+  minimumSpend: 500,
+  capacity: {
+    total: 250,
+    available: 25
+  },
+  logoUrl: "/images/logo.png",
+  contactInfo: {
+    email: "info@skylinelounge.com",
+    phone: "(555) 123-4567",
+    website: "www.skylinelounge.com"
+  },
+  socialMedia: {
+    instagram: "@skylinelounge",
+    facebook: "SkylineLounge",
+    twitter: "@SkylineLounge"
+  }
+}
+
+// Get profile data
+export async function getProfile(): Promise<Profile> {
+  await delay(300) // Simulate API delay
+  return {...profile}
 }
 

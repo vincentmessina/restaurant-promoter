@@ -8,6 +8,8 @@ export interface Reservation {
   status: string
   specialRequests?: string
   isVip: boolean
+  promoterId?: string
+  promoterName?: string
 }
 
 export interface Table {
@@ -58,5 +60,33 @@ export interface ReservationStats {
   expectedGuestsChange: number
   vipGuests: number
   vipGuestsPercentage: number
+}
+
+export interface Profile {
+  id: string
+  venueName: string
+  venueLocation: string
+  venueDescription: string
+  musicGenres: string[]
+  operatingHours: {
+    openTime: string
+    closeTime: string
+  }
+  minimumSpend: number
+  capacity: {
+    total: number
+    available: number
+  }
+  logoUrl: string
+  contactInfo: {
+    email: string
+    phone: string
+    website?: string
+  }
+  socialMedia: {
+    instagram?: string
+    facebook?: string
+    twitter?: string
+  }
 }
 

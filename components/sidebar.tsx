@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ChefHat, ClipboardCheck, ClipboardList, LayoutDashboard, LogOut, Settings, Users, XCircle } from "lucide-react"
+import { Building, ChefHat, ClipboardCheck, ClipboardList, LayoutDashboard, LogOut, Settings, Users, XCircle } from "lucide-react"
 
 export default function Sidebar() {
   const pathname = usePathname()
@@ -39,6 +39,11 @@ export default function Sidebar() {
       href: "/guests",
       icon: Users,
       label: "Guests",
+    },
+    {
+      href: "/profile",
+      icon: Building,
+      label: "Profile",
     },
   ]
 
